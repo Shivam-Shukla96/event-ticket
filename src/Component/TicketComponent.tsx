@@ -57,6 +57,8 @@ export default function TicketComponent({ data }: { data: FormData }) {
 
           <div className="flex items-center gap-4">
             <Image
+            width={40}
+            height={40}
               src={data.avatarUrl}
               alt="Avatar"
               className="w-16 h-16 sm:w-14 sm:h-14 rounded-[10px] object-cover"
@@ -65,6 +67,7 @@ export default function TicketComponent({ data }: { data: FormData }) {
               <p className="font-medium text-sm sm:text-base">{data.name}</p>
               <div className="flex items-center gap-1">
                 <Image
+                
                   src="/icon-github.svg"
                   alt="GitHub"
                   width={16}

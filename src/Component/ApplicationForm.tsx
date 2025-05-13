@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import Image from "next/image";
 interface FormData {
   name: string;
@@ -16,13 +16,13 @@ interface ApplicationFormProps {
   setSubmitted: (submitted: boolean) => void;
   setFormData: (data: any) => void;
   formData: FormData;
- }
+}
 
 export default function ApplicationForm({
   setSubmitted,
   setFormData,
   formData,
- }: ApplicationFormProps) {
+}: ApplicationFormProps) {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -37,9 +37,7 @@ export default function ApplicationForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 2000);
+    setSubmitted(true);
   };
 
   return (
@@ -47,11 +45,13 @@ export default function ApplicationForm({
       {/* Header */}
       <div className="text-center flex flex-col  items-center mb-6">
         <div className="animate-bounce bg-transparent ">
-        <Image
-          src="/logo.svg"
-          alt="Coding Conf Logo"
-          className="w-10 rounded-md  p-1 mb-2"
-        />
+          <Image
+            width={40}
+            height={40}
+            src="/logo.svg"
+            alt="Coding Conf Logo"
+            className="w-10 rounded-md  p-1 mb-2"
+          />
         </div>
         <h1 className="text-3xl font-bold leading-tight  animate-pulse">
           Your Journey to Coding Conf <br />
@@ -72,6 +72,8 @@ export default function ApplicationForm({
           >
             {formData.avatarUrl ? (
               <Image
+                width={40}
+                height={40}
                 src={formData.avatarUrl}
                 alt="Preview"
                 className="w-16 h-16 rounded-full object-cover mb-2"
@@ -79,6 +81,8 @@ export default function ApplicationForm({
             ) : (
               <>
                 <Image
+                  width={40}
+                  height={40}
                   src="/upload-icon.svg"
                   alt="Upload"
                   className="w-12 h-12 mb-2 hover:scale-120 transition-transform"
